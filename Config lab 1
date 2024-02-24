@@ -1,0 +1,268 @@
+ 
+LAB cấu hình:
+-----------------------------VTP VLAN---------------------
+
+SW-INS-CORE
+
+hostname SW-INS-CORE
+
+vtp domain bkacad
+vtp mode server
+vtp pass abc
+vtp ver 2
+
+vlan 10
+name tech
+vlan 20
+name INS
+exit
+
+inter fa0/2
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
+inter fa0/4
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
+
+
+
+SW-INS-1
+
+hostname SW-INS-1
+
+vtp domain bkacad
+vtp mode client
+vtp pass abc
+vtp ver 2
+
+inter range fa0/2-3
+switchport mode trunk
+exit
+
+inter fa0/24
+switch mode access
+switch access vlan 10
+exit
+
+
+
+SW-INS-2
+
+hostname SW-INS-2
+
+vtp domain bkacad
+vtp mode client
+vtp pass abc
+vtp ver 2
+
+inter range fa0/3-4
+switchport mode trunk
+exit
+inter fa0/24
+switch mode access
+switch access vlan 20
+exit
+
+
+
+SW-staff
+
+hostname SW-staff
+vlan 30
+name Staff
+vlan 40
+name Student
+exit
+
+inter fa0/2
+switch mode access
+switch access vlan 40
+exit
+
+inter fa0/3
+switch mode access
+switch access vlan 30
+exit
+
+inter fa0/1
+switch mode trunk
+exit
+
+
+----------------------PVST--------------------
+
+SW-INS-1
+
+spanning-tree mode pvst
+spanning-tree vlan 10 priority 0
+spanning-tree vlan 20 priority 4096
+
+inter fa0/24
+switch mode access
+switch access vlan 10
+exit
+
+SW-INS-2
+
+spanning-tree mode pvst
+spanning-tree vlan 20 priority 0
+spanning-tree vlan 10 priority 4096
+
+inter fa0/24
+switch mode access
+switch access vlan 20
+exit
+
+
+----------------------------DHCP---------------
+
+hostname DHCP
+
+inter gi0/0
+ip add 10.0.2.1 255.255.255.0
+no shut
+exit
+
+inter gi0/1
+ip add 192.168.100.1 255.255.255.0
+no shut
+exit
+
+ip dhcp excluded-address 192.168.100.1 192.168.100.10
+ip dhcp pool DHCP
+default-router 192.168.100.1
+dns-server 8.8.8.8
+network 192.168.100.0 255.255.255.0 
+domain-name bkacad
+exit
+
+------------------------------Inter VLAN routing--------
+
+SITE-2
+
+hostname SITE-2
+
+inter gi0/0
+no shut
+exit
+
+inter gi0/1
+ip add 10.0.4.1 255.255.255.0
+no shut
+exit
+
+inter se 0/0/0
+ip add 10.0.5.1 255.255.255.252
+no shut
+exit
+
+
+interface gigabitEthernet 0/0.30
+encapsulation dot1Q 30
+ip address 192.168.30.1 255.255.255.0
+exit
+
+interface gigabitEthernet 0/0.40
+encapsulation dot1Q 40
+ip address 192.168.40.1 255.255.255.0
+exit
+
+
+
+SW-INS-CORE
+
+ip routing
+
+inter vlan 10
+ip add 192.168.10.1 255.255.255.0
+no shut
+exit
+
+inter vlan 20
+ip add 192.168.20.1 255.255.255.0
+no shut
+exit
+
+
+-----------------------Static route---------------
+
+SW-INS-CORE
+
+interface fastEthernet 0/1
+no switchport
+ip address 10.0.1.1 255.255.255.0
+no shut
+exit
+
+ip route 0.0.0.0 0.0.0.0 10.0.1.2
+
+
+DHCP router
+
+ip route 0.0.0.0 0.0.0.0 10.0.2.2
+
+
+SITE-1
+
+hostname SITE-1
+
+inter gi0/0
+ip add 10.0.3.2 255.255.255.0
+no shut
+exit
+
+inter gi0/1
+ip add 10.0.2.2 255.255.255.0
+no shut
+exit
+
+inter gi0/2
+ip add 10.0.1.2 255.255.255.0
+no shut
+exit
+
+inter se 0/0/0
+ip add 10.0.5.2 255.255.255.252
+no shut
+exit
+
+ip route 192.168.10.0 255.255.255.0 10.0.1.1
+ip route 192.168.20.0 255.255.255.0 10.0.1.1
+ip route 192.168.100.0 255.255.255.0 10.0.2.1
+ip route 192.168.30.0 255.255.255.0 10.0.3.1
+ip route 192.168.40.0 255.255.255.0 10.0.3.1
+ip route 192.168.30.0 255.255.255.0 10.0.5.1 3
+ip route 192.168.40.0 255.255.255.0 10.0.5.1 3
+ip route 0.0.0.0 0.0.0.0 10.0.3.1
+
+
+GATE
+
+hostname GATE
+
+inter gi0/0
+ip add 10.0.3.1 255.255.255.0
+no shut
+exit
+
+inter gi0/1
+ip add 10.0.4.2 255.255.255.0
+no shut
+exit
+
+ip route 192.168.10.0 255.255.255.0 10.0.3.2
+ip route 192.168.20.0 255.255.255.0 10.0.3.2
+ip route 192.168.100.0 255.255.255.0 10.0.3.2
+ip route 192.168.30.0 255.255.255.0 10.0.4.1
+ip route 192.168.40.0 255.255.255.0 10.0.4.1
+ip route 0.0.0.0 0.0.0.0 100.10.10.9
+
+SITE-2
+
+ip route 0.0.0.0 0.0.0.0 10.0.4.2
+ip route 0.0.0.0 0.0.0.0 10.0.5.2 3
+
