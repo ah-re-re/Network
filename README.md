@@ -1,24 +1,56 @@
-Thiết kế hệ thống mạng hiệu quả
+## Documentations
 
-· Thiết kế một hệ thống mạng để đáp ứng một đặc điểm kỹ thuật nhất định
-· Thiết lập cấu trúc liên kết và khởi tạo thiết bị
+Step 1: Visit the official website of Netacad using any web browser.
+https://media.geeksforgeeks.org/wp-content/uploads/20220310090414/z1.JPG
+Visit-the-official-website-of-Netacad
+Step 2: Press the login button and select log In option.
 
-![image](https://github.com/ah-re-re/Network/assets/90133739/32d70d3d-8749-4f98-877a-d264ec125aa3)
+Select-log-In-option
+Step 3: Next screen will appear, click on the sign-up option.
 
-![image](https://github.com/ah-re-re/Network/assets/90133739/ed312b1c-ecbb-4f6a-9327-cd381c70bfa9)
+Click-on-the-sign-up-option
+Step 4: Next screen will appear and will ask for email and password and other simple details, fill them and click on Register.
 
-· Kiểm tra và đánh giá thiết kế đáp ứng yêu cầu và phân tích phản hồi của người dùng
+Click-on-Register
+Step 5: Now the login screen appears again so fill in the Email id.
 
-Mẫu phản hồi của người dùng
+Login-using-Email-id
+Step 6: On the next screen enter the password and press the Login button.
 
-· Thiết kế lịch bảo trì để hỗ trợ hệ thống nối mạng
+Press-the-Login-button
+Step 7: Dashboard will initialize, now click on Resources and choose Download Packet Tracer Option.  
 
-· Tracert
+Choose-Download-Packet-Tracer-Option
+Step 8: On the next web page choose the operating system to download the packet tracer. Downloading will start automatically.
 
-· telnet/ssh
+Downloading-will-start-automatically
+Step 9: Check for the executable file in your system and run it.
 
-· Điều tra những chức năng nào sẽ cho phép hệ thống hỗ trợ phát triển thiết bị và bổ sung các thiết bị liên lạc.
+Check-for-the-executable-file
+Step 10: Next screen is of License Agreement so Click on I accept the license.
 
-o Tường lửa
+Click-on-I-accept-the-license
+Step 11: Choose the installing location which has sufficient space.
 
-o Sao lưu: máy chủ, đám mây
+Choose-the-installing-location
+Step 12: Select the start menu folder and click the Next button.
+
+Click-the-Next-button
+Step 13: Check the box for creating a desktop icon and click on the Next button.
+
+Click-on-the-Next-button
+Step 14: Now packet tracer is ready to install so click on the Install button.
+
+Click-on-the-Install-button
+Step 15: The installation process will start and will hardly take a minute.
+
+Wait-for-the-installation-process
+Step 16: Click on the Finish button to complete the installation.
+
+Click-on-the-Finish-button
+Step 17: An icon is created on the desktop so run it.
+
+Cisco-pocket-tracer-icon
+Step 18: Interface is initialized and the software is ready to use.
+
+Ready-to-use
