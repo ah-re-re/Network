@@ -1,24 +1,34 @@
-Thiết kế hệ thống mạng hiệu quả
+#Installing Packet Tracer on Windows
 
-· Thiết kế một hệ thống mạng để đáp ứng một đặc điểm kỹ thuật nhất định
-· Thiết lập cấu trúc liên kết và khởi tạo thiết bị
+**Step 1:** Visit the official website of [Netacad][1] using any web browser.
 
-![image](https://github.com/ah-re-re/Network/assets/90133739/32d70d3d-8749-4f98-877a-d264ec125aa3)
+[1]: <https://www.netacad.com/>
 
-![image](https://github.com/ah-re-re/Network/assets/90133739/ed312b1c-ecbb-4f6a-9327-cd381c70bfa9)
+![examples](z1.jpg)
 
-· Kiểm tra và đánh giá thiết kế đáp ứng yêu cầu và phân tích phản hồi của người dùng
+**Step 2:** Press the login button and select log In option.
+![examples](z2.jpg)
 
-Mẫu phản hồi của người dùng
+**Step 3:** Next screen will appear, click on the sign-up option.
+![examples](z3a.jpg)
 
-· Thiết kế lịch bảo trì để hỗ trợ hệ thống nối mạng
+**Step 4:** Next screen will appear and will ask for email and password and other simple details, fill them and click on Register.
+![examples](z4.jpg)
 
-· Tracert
+**Step 5:** Now the login screen appears again so fill in the Email id.
+![examples](z5.jpg)
 
-· telnet/ssh
+**Step 6:** On the next screen enter the password and press the Login button.
+![examples](z6.jpg)
 
-· Điều tra những chức năng nào sẽ cho phép hệ thống hỗ trợ phát triển thiết bị và bổ sung các thiết bị liên lạc.
+**Step 7:** Dashboard will initialize, now click on Resources and choose Download Packet Tracer Option. 
+![examples](z7.jpg)
 
-o Tường lửa
+**Step 8:** On the next web page choose the operating system to download the packet tracer. Downloading will start automatically.
+![examples](z8.jpg)
 
-o Sao lưu: máy chủ, đám mây
+**Step 9:** Check for the executable file in your system and run it.
+![examples](z9.jpg)
+
+
+
