@@ -29,6 +29,3 @@
 
 **Step 9:** Check for the executable file in your system and run it.
 ![examples](z9.jpg)
-
-
-
