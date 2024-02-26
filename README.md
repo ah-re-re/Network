@@ -28,4 +28,8 @@
 ![examples](z8.jpg)
 
 **Step 9:** Check for the executable file in your system and run it.
+<<<<<<< HEAD
 ![examples](z9.jpg)
+=======
+![examples](z9.jpg)
+>>>>>>> daf6c3650d456f997731dbe8fafa22a600219433
